@@ -1,0 +1,157 @@
+@font-face {
+  font-display: swap;
+  font-family: "Inconsolata";
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://fonts-3by.pages.dev/inconsolata-v32-latin/inconsolata-v32-latin-regular.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Inconsolata";
+  font-style: normal;
+  font-weight: 500;
+  src: url("https://fonts-3by.pages.dev/inconsolata-v32-latin/inconsolata-v32-latin-500.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Inconsolata";
+  font-style: normal;
+  font-weight: 700;
+  src: url("https://fonts-3by.pages.dev/inconsolata-v32-latin/inconsolata-v32-latin-700.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Inconsolata";
+  font-style: normal;
+  font-weight: 800;
+  src: url("https://fonts-3by.pages.dev/inconsolata-v32-latin/inconsolata-v32-latin-800.woff2")
+    format("woff2");
+}
+
+:root {
+  /* colors */
+  --heading-color: hsl(0, 0%, 100%);
+  --label-color: hsl(252, 6%, 83%);
+  --text-color: hsl(245, 15%, 58%);
+  --Neutral-700: hsl(245, 19%, 35%);
+  --background-buttontext-color: hsl(248, 70%, 10%);
+
+  --error-color: hsl(7, 88%, 67%);
+  --highlight-text-color: hsl(7, 71%, 60%);
+
+  --Gradient-text: hsl(7, 86%, 67%), hsl(0, 0%, 100%);
+
+  /* typography */
+  /* font faimly */
+  --ff: "Inconsolata";
+}
+
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--background-buttontext-color);
+  font-family: var(--ff), sans-serif;
+  color: white;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+.wrapper {
+    height: 100vh;
+  background-image: 
+    url(../assets/images/background-mobile.png),
+    url(../assets/images/pattern-lines.svg),
+    url(../assets/images/pattern-squiggly-line-bottom.svg),
+    url(../assets/images/pattern-squiggly-line-top.svg);
+  background-position: center,center center;  
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+  background-size: cover;
+}
+
+@media (min-width: 768px){
+    .wrapper {
+        height: 100vh;
+      background-image: 
+        url(../assets/images/background-tablet.png),
+        url(../assets/images/pattern-lines.svg),
+        url(../assets/images/pattern-squiggly-line-bottom.svg),
+        url(../assets/images/pattern-squiggly-line-top.svg);
+      background-position: center,center center;  
+      background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+      background-size: cover;
+    }
+}
+
+@media (min-width: 1024px){
+    .wrapper {
+        height: 100vh;
+      background-image: 
+        url(../assets/images/background-desktop.png),
+        url(../assets/images/pattern-lines.svg),
+        url(../assets/images/pattern-squiggly-line-bottom.svg),
+        url(../assets/images/pattern-squiggly-line-top.svg);
+      background-position: center,center center;  
+      background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+      background-size: cover;
+    }
+}
