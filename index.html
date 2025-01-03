@@ -30,8 +30,16 @@
       </header>
       <form action="#">
         <section class="input-media">
-          <label for="upload-file">Upload Avatar</label> <br>
-          <input type="file" name="upload-fie" id="upload-file" placeholder="Drag and drop or click to upload" required>
+          <p>Upload Avatar</p> <br>
+          <input type="file" name="upload-file" 
+          id="upload-file" 
+          accept=".jpg, .png, .jpeg"
+          required
+          hidden>
+          <label for="upload-file">
+            <img src="./assets/images/icon-upload.svg" alt="">
+            <p>Drag and drop or click to upload</p>
+          </label>
     
           <p class="feedback" data-feedback="file-upload">Upload your photo (JPG or PNG, max size: 500KB).</p>
         </section>
