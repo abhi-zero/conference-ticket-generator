@@ -72,6 +72,13 @@ body {
   background-color: var(--background-buttontext-color);
   font-family: var(--ff), sans-serif;
   color: white;
+  background-image: url(../assets/images/pattern-squiggly-line-bottom.svg),
+  url(../assets/images/pattern-squiggly-line-top.svg),
+  url(../assets/images/pattern-lines.svg),
+  url(../assets/images/background-mobile.png);
+background-position: bottom left, top right, top, center;
+background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+background-size: contain, contain, auto, cover;
 }
 
 /* 5. Improve media defaults */
@@ -113,45 +120,76 @@ h3,
 h4,
 h5,
 h6 {
-  text-wrap: balance;
+  text-wrap: pretty;
 }
 
 .wrapper {
+  max-width: 700px;
+  padding: 30px 20px;
+  place-self: center;
+}
+
+.logo{
+  place-self: center;
+}
+ 
+main{
+  display: grid;
+  grid-template-rows: auto;
+  gap: 20px;
+  margin-block: 40px;
+  place-self: center;
+  align-items: center;
+  text-align: center;
+}
+.heading-description{
+  display: grid;
+  gap: 20px;
+}
+.heading-description .heading{
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--heading-color);
+}
+
+.heading-description .description{
+  font-size:20px;
+  font-weight: 400;
+  color:var(--text-color);
+}
+
+form{
+  display: grid;
+  gap: 20px;
+}
+
+.display-ticket{
+  display: none;
+}
+
+@media (min-width: 768px) {
+  body {
+    background-image: url(../assets/images/pattern-squiggly-line-bottom.svg),
+      url(../assets/images/pattern-squiggly-line-top.svg),
+      url(../assets/images/pattern-lines.svg),
+      url(../assets/images/background-tablet.png);
+      background-size: auto, auto, auto, cover;
+  }
+  .heading-description .heading{
+    font-size: 40px;
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
     height: 100vh;
-  background-image: 
-    url(../assets/images/background-mobile.png),
-    url(../assets/images/pattern-lines.svg),
-    url(../assets/images/pattern-squiggly-line-bottom.svg),
-    url(../assets/images/pattern-squiggly-line-top.svg);
-  background-position: center,center center;  
-  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
-  background-size: cover;
-}
-
-@media (min-width: 768px){
-    .wrapper {
-        height: 100vh;
-      background-image: 
-        url(../assets/images/background-tablet.png),
-        url(../assets/images/pattern-lines.svg),
-        url(../assets/images/pattern-squiggly-line-bottom.svg),
-        url(../assets/images/pattern-squiggly-line-top.svg);
-      background-position: center,center center;  
-      background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
-      background-size: cover;
-    }
-}
-
-@media (min-width: 1024px){
-    .wrapper {
-        height: 100vh;
-      background-image: 
-        url(../assets/images/background-desktop.png),
-        url(../assets/images/pattern-lines.svg),
-        url(../assets/images/pattern-squiggly-line-bottom.svg),
-        url(../assets/images/pattern-squiggly-line-top.svg);
-      background-position: center,center center;  
-      background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
-      background-size: cover;
-    }
+    background-image: url(../assets/images/pattern-squiggly-line-bottom.svg),
+      url(../assets/images/pattern-squiggly-line-top.svg),
+      url(../assets/images/pattern-lines.svg),
+      url(../assets/images/background-desktop.png);
+  }
+  .heading-description .heading{
+    font-size: 48px;
+  }
 }
