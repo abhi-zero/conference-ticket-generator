@@ -1,0 +1,123 @@
+.display-ticket {
+    display: grid;
+    grid-template-rows: 1fr 1fr .13fr;
+    gap: 50px;
+    margin-block: 40px;
+    place-self: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .display-ticket .name {
+    background: linear-gradient(45deg, var(--Gradient-text));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .display-ticket .description {
+    text-align: center;
+    width: 95%;
+    justify-self: center;
+  }
+  .display-ticket .email {
+    color: var(--highlight-text-color);
+  }
+  
+  .ticket-data{
+    width: 350px;
+    height: 200px;
+    justify-self: center;
+    background-image: url(../assets/images/pattern-ticket.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+  .conference-brand{
+    display: grid;
+    grid-template-columns: auto 9fr;
+    padding: 15px;
+  }
+  
+  .ticket-data .brand-location{
+    padding-left:10px ;
+    text-align: start;
+    align-self: center;
+  }
+  .ticket-data .brand-location .brand-name{
+    font-size: 24px;
+    line-height: 1;
+  }
+  .conference-brand::before{
+    content: "";
+    background-image: url(../assets/images/logo-mark.svg);
+    background-position: bottom ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 25px;
+    height: 25px;
+    margin-top: 5px;
+  }
+  
+  .ticket-data .brand-location .date-address{
+    font-size: 12px;
+    line-height: 1.5;
+    color: var(--text-color);
+  }
+
+  .user-details{
+    display: grid;
+    grid-template-columns: 50px 200px;
+    grid-template-rows: 25px 25px;
+    margin-inline: 15px;
+    margin-top: 25px;
+    align-self: end;
+  }
+
+  .user-details img{
+    width: 50px;
+    grid-area: 1 / 1;
+    border-radius: 10px;
+  }
+
+  .user-details .user-full-name{
+    grid-area: 1 / 2;
+    text-align: start;
+    padding-left: 10px;
+    font-size: 20px;
+  }
+
+  .user-details .user-name{
+    grid-area: 2 / 2 ;
+    text-align: start;
+    align-self: end;
+    padding-left: 10px;
+    font-size: 14px;
+    color:var(--text-color);
+  }
+  .user-name::before{
+    content:"" ;
+    background-image: url(../assets/images/icon-github.svg);
+    padding: 8px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:  contain;
+    /* background-clip: padding-box; */
+  }
+
+  .ticket-id-section{
+    transform: rotateZ(90deg);
+    display: block;
+    position: absolute;
+    top: 35%;
+    right:2%;
+  }
+  .ticket-id-{
+    font-size: 20px;
+    color: var(--text-color);
+  }
+
+  @media (min-width: 768px) {
+    .display-ticket .description {
+        width: 70%;
+      }
+  }
