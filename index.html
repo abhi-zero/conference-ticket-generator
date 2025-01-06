@@ -8,7 +8,12 @@
     <link rel="icon" type="image/png" sizes="32x32"
       href="./assets/images/favicon-32x32.png">
 
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet" />
+
     <link rel="stylesheet" href="./styles/style.css">
+    <script defer src="./scripts/main.js"></script>
 
     <title>Frontend Mentor | Conference ticket generator</title>
 
@@ -20,7 +25,7 @@
         <figure class="logo">
           <img src="./assets/images/logo-full.svg" alt="Coding Conf logo">
         </figure>
-  
+
         <!-- Form starts -->
         <main>
           <header class="heading-description">
@@ -46,18 +51,18 @@
                   <p>Drag and drop or click to upload</p>
                 </label>
               </section>
-  
+
               <p class="upload-feedback" data-feedback="file-upload">Upload your
                 photo (JPG or PNG, max size: 500KB).</p>
             </section>
-  
+
             <section class="input-fields">
               <section class="full-name-section">
                 <label class="input-title" for="full-name">Full Name</label>
                 <input class="input-style" type="text" id="full-name"
                   name="full-name" placeholder="Full Name" required>
               </section>
-  
+
               <section class="email-section">
                 <label
                   class="input-title"
@@ -71,9 +76,9 @@
                   email address.</p>
               </section>
               <section class="github-section">
-                <label 
-                class="input-title"
-                for="github-username">GitHub Username</label>
+                <label
+                  class="input-title"
+                  for="github-username">GitHub Username</label>
                 <input
                   class="input-style"
                   type="text" id="github-username" name="github-username"
@@ -81,62 +86,38 @@
                 <p class="feedback" data-feedback="github">Please enter a valid
                   GitHub username.</p>
               </section>
-  
+
               <section class="cta">
-                <button  type="submit" aria-label="Generate My Ticket">Generate My
+                <button type="submit" aria-label="Generate My Ticket">Generate
+                  My
                   Ticket</button>
               </section>
             </form>
             <section class="empty">
-               
+
             </section>
           </main>
-  
+
           <!-- Form ends -->
-  
-          <!-- Generated tickets starts -->
-  
-          <section class="display-ticket">
-            <section class="heading-description">
-              <h1 class="heading">
-                Congrats, <span class="name" data-display="name">Abhinandan bhatti</span> ! Your
-                ticket is ready.
-              </h1>
-  
-              <p class="description">We've emailed your ticket to <span
-                  class="email" data-display="email">bhattiabhi964@gmail.com</span> and will send updates
-                in the run up to the event.</p>
-            </section>
-            <section class="ticket-data">
-              <section class="conference-brand">
-                
-                <section class="brand-location">
-                  <h2 class="brand-name">
-                    Coding Conf
-                  </h2>
-                  <p class="date-address">
-                    Jan 31, 2025 / Austin, TX
-                  </p>
-                </section>
-              </section>
-              <section class="user-details">
-                <img src="/assets/images/image-avatar.jpg"
-                  alt="User's profile picture">
-                <p class="user-full-name">
-                  <!-- by dynamic data -->
-                </p>
-                <p class="user-name">
-                  <!-- by dynamic data -->
-                </p>
-                <p class="ticket-id">
-                  <!-- by dynamic data -->
-                </p>
-              </section>
-            </section>
-          </section>
-  
-          <!-- Generated tickets ends -->
         </section>
-    </section>
+        <!-- footer -->
+        <footer>
+          <p class="copyright">
+            &copy; 2021 Coding Conf. All rights reserved.
+          </p>
+          <p class="privacy-policy">
+            <a href="#">Privacy Policy</a>
+          </p>
+          <p class="terms-of-use">
+            <a href="#">Terms of Use</a>
+          </p>
+          <div class="social-handles">
+            <a href="http://"><i class="ri-facebook-fill"></i></a>
+            <a href="http://"><i class="ri-instagram-line"></i></a>
+            <a href="http://"><i class="ri-twitter-x-line"></i></a>
+            <a href="http://"><i class="ri-discord-line"></i></a>
+          </div>
+        </footer>
+      </section>
     </body>
   </html>
