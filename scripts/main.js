@@ -19,7 +19,6 @@ class User {
 
 // button Dom
 const submitBtn = document.querySelector(".cta-submit");
-console.log(submitBtn);
 
 // Input elements
 const fullName = document.getElementById("full-name"); // Input field for full name
@@ -141,14 +140,12 @@ function validateName(value) {
     nameFeedback.style.display = "block"; // Show feedback if validation fails
     fullName.style.borderColor = "var(--error-color)"; // Apply error styles
     fullName.style.outlineColor = "var(--error-color)";
-    console.log("fullname", false);
     return false;
   } else {
     // If valid, apply success styles and hide feedback
     fullName.style.borderColor = "green";
     fullName.style.outlineColor = "green";
     nameFeedback.style.display = "none";
-    console.log("fullname", true);
     return true;
   }
 }
@@ -164,17 +161,14 @@ function validateEmail(value) {
     email.style.borderColor = "var(--error-color)"; // Apply error styles
     email.style.outlineColor = "var(--error-color)";
     emailFeedback.style.display = "block";
-    console.log("email empty", false);
     return false;
   } else if (emailValue.includes(" ")) {
     // Check for spaces in the email
     emailFeedback.textContent = "Email addresses cannot contain spaces.";
-    console.log("email space", false);
     return false;
   } else if (!emailValue.includes("@")) {
     // Ensure the email contains '@'
     emailFeedback.textContent = "Email must contain '@'.";
-    console.log("email @", false);
     return false;
   } else if (!regex.test(emailValue)) {
     // Check against the regex for valid email
@@ -182,14 +176,12 @@ function validateEmail(value) {
     email.style.borderColor = "var(--error-color)"; // Apply error styles
     email.style.outlineColor = "var(--error-color)";
     emailFeedback.style.display = "block";
-    console.log("email reg", false);
     return false;
   } else {
     // If valid, apply success styles and hide feedback
     email.style.borderColor = "green";
     email.style.outlineColor = "green";
     emailFeedback.style.display = "none";
-    console.log("email ", true);
     return true;
   }
 }
@@ -204,7 +196,6 @@ function validateUserName(value) {
     userName.style.borderColor = "var(--error-color)"; // Apply error styles
     userName.style.outlineColor = "var(--error-color)";
     userNameFeedback.style.display = "block";
-    console.log('username ""', false);
     return false;
   }
   // Check if username starts or ends with a hyphen
@@ -214,7 +205,6 @@ function validateUserName(value) {
     userName.style.borderColor = "var(--error-color)"; // Apply error styles
     userName.style.outlineColor = "var(--error-color)";
     userNameFeedback.style.display = "block";
-    console.log("username -", false);
     return false;
   }
   // Check for spaces or invalid special characters
@@ -224,14 +214,12 @@ function validateUserName(value) {
     userName.style.borderColor = "var(--error-color)";
     userName.style.outlineColor = "var(--error-color)";
     userNameFeedback.style.display = "block";
-    console.log("username sign", false);
     return false;
   } else {
     // If valid, apply success styles and hide feedback
     userName.style.borderColor = "green";
     userName.style.outlineColor = "green";
     userNameFeedback.style.display = "none";
-    console.log("username ", true);
     return true;
   }
 }
