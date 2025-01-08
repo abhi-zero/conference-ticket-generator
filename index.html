@@ -36,7 +36,7 @@
               Secure your spot at next year's biggest coding conference.
             </p>
           </header>
-          <form action="#">
+          <form action="ticket-info.html" method="post">
             <section class="input-media">
               <p class="input-title">Upload Avatar</p>
               <section class="upload-media-box">
@@ -59,8 +59,13 @@
             <section class="input-fields">
               <section class="full-name-section">
                 <label class="input-title" for="full-name">Full Name</label>
-                <input class="input-style" type="text" id="full-name"
-                  name="full-name" placeholder="Full Name" required>
+                <input 
+                class="input-style" 
+                type="text"
+                 id="full-name"
+                  name="full-name" placeholder="Full Name" 
+                  autofocus
+                  required>
                   <p
                   class="feedback" data-feedback="full-name">Please enter a valid full name (no symbols, min:3 letters).</p>
               </section>
@@ -71,8 +76,10 @@
                   for="email">Email Address</label>
                 <input
                   class="input-style" type="email"
-                  id="email" name="email"
-                  placeholder="example@email.com" required>
+                  id="email" 
+                  name="email"
+                  placeholder="example@email.com" 
+                  required>
                 <p
                   class="feedback" data-feedback="email">Please enter a valid
                   email address.</p>
@@ -84,13 +91,13 @@
                 <input
                   class="input-style"
                   type="text" id="github-username" name="github-username"
-                  placeholder="yourusername" required>
+                  placeholder="yourusername" required min="1">
                 <p class="feedback" data-feedback="github">Please enter a valid
                   GitHub username.</p>
               </section>
 
               <section class="cta">
-                <button type="submit" aria-label="Generate My Ticket">Generate
+                <button type="submit" class="cta-submit" aria-label="Generate My Ticket" >Generate
                   My
                   Ticket</button>
               </section>
