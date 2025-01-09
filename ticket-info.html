@@ -13,6 +13,7 @@
       rel="stylesheet" />
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/ticket-info.css">
+    <script defer src="./scripts/display-data.js"></script>
 
     <title>Frontend Mentor | Conference ticket generator</title>
 
@@ -28,12 +29,12 @@
             <section class="display-ticket">
                 <section class="heading-description">
                 <h1 class="heading">
-                    Congrats, <span class="name" data-display="name">Abhinandan bhatti</span> ! Your
+                    Congrats, <span class="name" data-display="name"></span> ! Your
                     ticket is ready.
                 </h1>
 
                 <p class="description">We've emailed your ticket to <span
-                    class="email" data-display="email">bhattiabhi964@gmail.com</span> and will send updates
+                    class="email" data-display="email"></span> and will send updates
                     in the run up to the event.</p>
                 </section>
                 <section class="ticket-data">
@@ -48,22 +49,21 @@
                     </section>
                 </section>
                 <section class="user-details">
-                    <img src="/assets/images/image-avatar.jpg"
+                    <img data-display="user-profile" src="/assets/images/image-avatar.jpg"
                     alt="User's profile picture">
                     <p class="user-full-name" data-display="user-full-name">
-                       Abhinandan Bhatti
-                    
                     <!-- by dynamic data -->
                     </p>
-                    <p class="user-name" data-display="user-name">
-                      @abhinandan542435
+                    <p class="user-name">
+                      @<span data-display="user-name"></span>
+                      
                     <!-- by dynamic data -->
                     </p>
                     
                 </section>
                 <div class="ticket-id-section">
                   <p class="ticket-id">
-                    #<span data-display="ticket-id">12er4t</span>
+                    #<span data-display="ticket-id"></span>
                   <!-- by dynamic data -->
                   </p>
                 </div>
