@@ -1,24 +1,11 @@
-//upload image Dom
+// Grouped DOM element queries
+// Upload image DOM
 const uploadFile = document.getElementById("upload-file"); // Input field for upload image
 const uploadImage = document.getElementById("upload-image");
 
-// storing data
-// array
-let tickets = [];
-
-// class and constructor
-class User {
-  constructor(fullName, email, userName, uploadImageIcon, id) {
-    this.fullName = fullName;
-    this.email = email;
-    this.userName = userName;
-    this.uploadImageIcon = uploadImageIcon || "./assets/images/icon-upload.svg";
-    this.id = id;
-  }
-}
-
-// button Dom
+// Button DOM
 const submitBtn = document.querySelector(".cta-submit");
+const displayAllTicketBtn = document.querySelector(".cta-get-tickets");
 
 // Input elements
 const fullName = document.getElementById("full-name"); // Input field for full name
@@ -29,63 +16,36 @@ const userName = document.getElementById("github-username"); // Input field for 
 const nameFeedback = document.querySelector('[data-feedback="full-name"]'); // Feedback element for full name validation
 const emailFeedback = document.querySelector('[data-feedback="email"]'); // Feedback element for email validation
 const userNameFeedback = document.querySelector('[data-feedback="github"]'); // Feedback element for GitHub username validation
-// upload image variables
 
+const savedData = localStorage.getItem("tickets");
+// Storing data
+// Array
+let tickets = [];
+if (savedData) {
+  tickets = JSON.parse(savedData);
+}
+console.log(tickets);
+
+// Upload image variables
 let seletedImg = null;
 let profileImage = null;
 
-// Submit functionalaty
-
-submitBtn.addEventListener("click", (e) => {
-  let isValid = true;
-  e.preventDefault();
-  // check validation of inputs
-  if (!validateName(fullName.value)) {
-    isValid = false;
+// Class and constructor
+class User {
+  constructor(fullName, email, userName, uploadImageIcon, id) {
+    this.fullName = fullName;
+    this.email = email;
+    this.userName = userName;
+    this.uploadImageIcon = uploadImageIcon || "./assets/images/icon-upload.svg";
+    this.id = id;
   }
-  if (!validateEmail(email.value)) {
-    isValid = false;
-  }
-  if (!validateUserName(userName.value)) {
-    isValid = false;
-  }
-  console.log(isValid);
-  if (isValid) {
-    // create user object
-    const user = new User(
-      fullName.value,
-      email.value,
-      userName.value,
-      profileImage,
-      generateId()
-    );
-    // add object to array
-    tickets.push(user);
-    // addd array to local storage
-    localStorage.setItem("tickets", JSON.stringify(tickets));
-    // reset inputs
-    fullName.value = "";
-    email.value = "";
-    userName.value = "";
-    seletedImg = null;
-    window.location.href = "ticket-info.html";
-  }
-});
-
-// function id generater
-
-function generateId() {
-  const id = Math.floor(Math.random() * 1000000);
-  return `#${id}`;
 }
 
-// // Handle files selected via file input
-uploadFile.addEventListener("change", () => {
-  const file = uploadFile.files[0];
-  if (file) {
-    handleFile(file);
-  }
-});
+// Functions
+function generateId() {
+  const id = Math.floor(Math.random() * 1000000);
+  return id;
+}
 
 function handleFile(file) {
   if (validateFile(file)) {
@@ -114,35 +74,16 @@ function validateFile(file) {
   return file.size < maxSize;
 }
 
-// Live validation event listeners
-// Trigger name validation on every input in the full-name field
-fullName.addEventListener("input", () => {
-  validateName(fullName.value);
-});
-
-// Trigger email validation on every input in the email field
-email.addEventListener("input", () => {
-  validateEmail(email.value);
-});
-
-// Trigger username validation on every input in the GitHub username field
-userName.addEventListener("input", () => {
-  validateUserName(userName.value);
-});
-
-// Validation function for full name
 function validateName(value) {
-  const fullNameValue = value.trim(); // Remove leading and trailing spaces
-  const regex = /^[a-zA-Z ]{3,40}$/; // Full name must be 3-30 alphabetic characters only
+  const fullNameValue = value.trim();
+  const regex = /^[a-zA-Z ]{3,40}$/;
 
-  // Check if the input matches the regex
   if (!regex.test(fullNameValue)) {
-    nameFeedback.style.display = "block"; // Show feedback if validation fails
-    fullName.style.borderColor = "var(--error-color)"; // Apply error styles
+    nameFeedback.style.display = "block";
+    fullName.style.borderColor = "var(--error-color)";
     fullName.style.outlineColor = "var(--error-color)";
     return false;
   } else {
-    // If valid, apply success styles and hide feedback
     fullName.style.borderColor = "green";
     fullName.style.outlineColor = "green";
     nameFeedback.style.display = "none";
@@ -150,35 +91,29 @@ function validateName(value) {
   }
 }
 
-// Validation function for email
 function validateEmail(value) {
-  let emailValue = value.trim(); // Remove leading and trailing spaces
-  const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; // Standard email regex
+  let emailValue = value.trim();
+  const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
   if (emailValue == "") {
-    // Check for empty input
     emailFeedback.textContent = "Please enter your email address.";
-    email.style.borderColor = "var(--error-color)"; // Apply error styles
+    email.style.borderColor = "var(--error-color)";
     email.style.outlineColor = "var(--error-color)";
     emailFeedback.style.display = "block";
     return false;
   } else if (emailValue.includes(" ")) {
-    // Check for spaces in the email
     emailFeedback.textContent = "Email addresses cannot contain spaces.";
     return false;
   } else if (!emailValue.includes("@")) {
-    // Ensure the email contains '@'
     emailFeedback.textContent = "Email must contain '@'.";
     return false;
   } else if (!regex.test(emailValue)) {
-    // Check against the regex for valid email
     emailFeedback.textContent = "Please enter a valid email address.";
-    email.style.borderColor = "var(--error-color)"; // Apply error styles
+    email.style.borderColor = "var(--error-color)";
     email.style.outlineColor = "var(--error-color)";
     emailFeedback.style.display = "block";
     return false;
   } else {
-    // If valid, apply success styles and hide feedback
     email.style.borderColor = "green";
     email.style.outlineColor = "green";
     emailFeedback.style.display = "none";
@@ -186,29 +121,25 @@ function validateEmail(value) {
   }
 }
 
-// Validation function for GitHub username
 function validateUserName(value) {
-  const userNameValue = value.trim(); // Remove leading and trailing spaces
-
+  const userNameValue = value.trim();
   const regExp = /^[a-zA-Z0-9-]+$/;
+
   if (userNameValue == "") {
     userNameFeedback.textContent = "Please enter a valid username.";
-    userName.style.borderColor = "var(--error-color)"; // Apply error styles
+    userName.style.borderColor = "var(--error-color)";
     userName.style.outlineColor = "var(--error-color)";
     userNameFeedback.style.display = "block";
     return false;
   }
-  // Check if username starts or ends with a hyphen
   if (userNameValue.startsWith("-") || userNameValue.endsWith("-")) {
     userNameFeedback.textContent =
       "The username must not start or end with a '-'.";
-    userName.style.borderColor = "var(--error-color)"; // Apply error styles
+    userName.style.borderColor = "var(--error-color)";
     userName.style.outlineColor = "var(--error-color)";
     userNameFeedback.style.display = "block";
     return false;
-  }
-  // Check for spaces or invalid special characters
-  else if (!regExp.test(userNameValue)) {
+  } else if (!regExp.test(userNameValue)) {
     userNameFeedback.textContent =
       "The username cannot include spaces or special characters (e.g., !, @, $).";
     userName.style.borderColor = "var(--error-color)";
@@ -216,10 +147,65 @@ function validateUserName(value) {
     userNameFeedback.style.display = "block";
     return false;
   } else {
-    // If valid, apply success styles and hide feedback
     userName.style.borderColor = "green";
     userName.style.outlineColor = "green";
     userNameFeedback.style.display = "none";
     return true;
   }
 }
+
+// Event listeners || cta actions
+submitBtn.addEventListener("click", (e) => {
+  let isValid = true;
+  e.preventDefault();
+
+  if (!validateName(fullName.value)) {
+    isValid = false;
+  }
+  if (!validateEmail(email.value)) {
+    isValid = false;
+  }
+  if (!validateUserName(userName.value)) {
+    isValid = false;
+  }
+  console.log(isValid);
+  if (isValid) {
+    const user = new User(
+      fullName.value,
+      email.value,
+      userName.value,
+      profileImage,
+      generateId()
+    );
+    tickets.push(user);
+    localStorage.setItem("tickets", JSON.stringify(tickets));
+    fullName.value = "";
+    email.value = "";
+    userName.value = "";
+    seletedImg = null;
+    window.location.href = "ticket-info.html";
+  }
+});
+
+displayAllTicketBtn.addEventListener("click", () => {
+  window.location.href = "tickets.html";
+});
+
+uploadFile.addEventListener("change", () => {
+  const file = uploadFile.files[0];
+  if (file) {
+    handleFile(file);
+  }
+});
+
+fullName.addEventListener("input", () => {
+  validateName(fullName.value);
+});
+
+email.addEventListener("input", () => {
+  validateEmail(email.value);
+});
+
+userName.addEventListener("input", () => {
+  validateUserName(userName.value);
+});
