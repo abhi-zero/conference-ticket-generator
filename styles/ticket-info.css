@@ -114,8 +114,8 @@
     top: 35%;
     right:2%;
   }
-  .ticket-id-{
-    font-size: 20px;
+  .ticket-id{
+    font-size: 14px;
     color: var(--text-color);
   }
 
