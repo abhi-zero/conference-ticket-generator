@@ -44,7 +44,7 @@ if (window.location.pathname.includes("/tickets.html")) {
     if (card) {
       const seletedCard = card.getAttribute("data-arr-elem");
       // Redirect to the ticket-info page with the selected ticket index
-      window.location.href = `https://abhi-zero.github.io/ticket-info.html?ticket=${seletedCard}`;
+      window.location.href = `https://abhi-zero.github.io/conference-ticket-generator/ticket-info.html?ticket=${seletedCard}`;
     }
   });
 }
