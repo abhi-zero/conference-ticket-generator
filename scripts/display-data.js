@@ -36,7 +36,7 @@ function showTicketLists() {
 }
 
 // Check if on the tickets.html page and display the ticket list
-if (window.location.href == "http://127.0.0.1:5500/tickets.html") {
+if (window.location.href == "/tickets.html") {
   showTicketLists();
 
   // Add event listener to the ticket list for navigation
