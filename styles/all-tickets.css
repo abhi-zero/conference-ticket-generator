@@ -6,8 +6,8 @@
 .user-details.card{
     border: 2px solid var(--input-border-background-color);
     width: 100%;
-    padding: 20px;
-    margin-left: -20px;
+    padding: var(--space100);
+    margin-left: -(var(--space100));
     border-radius: 10px;
     cursor: pointer;
     transition: all .3s ease-in-out;

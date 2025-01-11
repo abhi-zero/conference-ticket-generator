@@ -1,8 +1,9 @@
 .display-ticket {
+   
     display: grid;
     grid-template-rows: 1fr 1fr .13fr;
-    gap: 50px;
-    margin-block: 40px;
+    gap: var(--space500);
+    margin-block: var(--space400);
     place-self: center;
     align-items: center;
     text-align: center;
@@ -24,8 +25,8 @@
   }
   
   .ticket-data{
-    width: 350px;
-    height: 200px;
+    width: 21.875rem;
+    height: 12.5rem;
     justify-self: center;
     background-image: url(../assets/images/pattern-ticket.svg);
     background-size: contain;
@@ -35,47 +36,49 @@
   .conference-brand{
     display: grid;
     grid-template-columns: auto 9fr;
-    padding: 15px;
+    padding: var(--space2);
   }
   
   .ticket-data .brand-location{
-    padding-left:10px ;
+    padding-left:var(--space100) ;
     text-align: start;
     align-self: center;
   }
   .ticket-data .brand-location .brand-name{
-    font-size: 24px;
+    font-size: var(--fs500);
     line-height: 1;
   }
   .conference-brand::before{
+    
+
     content: "";
     background-image: url(../assets/images/logo-mark.svg);
     background-position: bottom ;
     background-repeat: no-repeat;
     background-size: cover;
-    width: 25px;
-    height: 25px;
-    margin-top: 5px;
+    width: 1.563rem;
+    height: 1.563rem;
+    margin-top: var(--space1);
   }
   
   .ticket-data .brand-location .date-address{
-    font-size: 12px;
+    font-size: var(--fs100);
     line-height: 1.5;
     color: var(--text-color);
   }
 
   .user-details{
     display: grid;
-    grid-template-columns: 50px 200px;
-    grid-template-rows: 25px 25px;
-    margin-inline: 15px;
-    margin-top: 25px;
+    grid-template-columns: 3.125rem 12.5rem;
+    grid-template-rows: 1.563rem 1.563rem;
+    margin-inline: var(--space2);
+    margin-top: var(--space3);
     align-self: end;
   }
 
   .user-details img{
-    width: 50px;
-    height: 50px;
+    width: 3.125rem;
+    height: 3.125rem;
     object-fit: cover;
     object-position: top;
     grid-area: 1 / 1;
@@ -85,22 +88,22 @@
   .user-details .user-full-name{
     grid-area: 1 / 2;
     text-align: start;
-    padding-left: 10px;
-    font-size: 20px;
+    padding-left: var(--space100);
+    font-size: var(--fs400);
   }
 
   .user-details .user-name{
     grid-area: 2 / 2 ;
     text-align: start;
     align-self: end;
-    padding-left: 10px;
-    font-size: 14px;
+    padding-left: var(--space100);
+    font-size: var(--fs200);
     color:var(--text-color);
   }
   .user-name::before{
     content:"" ;
     background-image: url(../assets/images/icon-github.svg);
-    padding: 8px;
+    padding: 0.5rem;
     background-position: center;
     background-repeat: no-repeat;
     background-size:  contain;
@@ -115,11 +118,11 @@
     right:2%;
   }
   .ticket-id{
-    font-size: 14px;
+    font-size: var(--fs200);
     color: var(--text-color);
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 48rem) {
     .display-ticket .description {
         width: 70%;
       }
