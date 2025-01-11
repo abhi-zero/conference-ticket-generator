@@ -1,7 +1,6 @@
 // DOM Elements
 // All ticket wrapper
 const allTicketSection = document.querySelector("#all-tickets");
-const liElem = document.querySelector(".card");
 
 // Display elements for ticket purchaser details
 const displayName = document.querySelector('[data-display="name"]');
@@ -45,7 +44,7 @@ if (window.location.pathname.includes("/tickets.html")) {
     if (card) {
       const seletedCard = card.getAttribute("data-arr-elem");
       // Redirect to the ticket-info page with the selected ticket index
-      window.location.href = `/ticket-info.html?ticket=${seletedCard}`;
+      window.location.href = `https://abhi-zero.github.io/ticket-info.html?ticket=${seletedCard}`;
     }
   });
 }
