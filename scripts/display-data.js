@@ -36,7 +36,7 @@ function showTicketLists() {
 }
 
 // Check if on the tickets.html page and display the ticket list
-if (window.location.href == "/tickets.html") {
+if (window.location.pathname == "/tickets.html") {
   showTicketLists();
 
   // Add event listener to the ticket list for navigation
