@@ -7,7 +7,7 @@
     border: 2px solid var(--input-border-background-color);
     width: 100%;
     padding: var(--space100);
-    margin-left: -(var(--space100));
+    margin-left: -1.25rem;
     border-radius: 10px;
     cursor: pointer;
     transition: all .3s ease-in-out;
